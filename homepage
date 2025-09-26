@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Circuit Nexus | AI & Big Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+        }
+        
+        .circuit-node {
+            animation: pulse 4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.2; }
+        }
+        
+        .holographic-aura {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+        
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .parallax-layer {
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <div id="vanta-bg" class="fixed inset-0 z-0"></div>
+    
+    <div class="relative z-10 min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="py-6 px-4 sm:px-8 lg:px-12">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center holographic-aura">
+                        <i data-feather="cpu" class="text-yellow-200"></i>
+                    </div>
+                    <span class="text-yellow-400 font-bold text-xl">QCN</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-yellow-300 hover:text-yellow-100 transition duration-300">Solutions</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-100 transition duration-300">Technology</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-100 transition duration-300">Applications</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-100 transition duration-300">Investment</a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-100 transition duration-300">About</a>
+                </nav>
+<button class="md:hidden text-yellow-400">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="flex-grow flex items-center py-16 px-4 sm:px-8 lg:px-12">
+            <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="parallax-layer" data-speed="0.1">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 glow text-yellow-400">
+                        <span class="block">Pioneer the Future with</span>
+                        <span class="block">Agentic AI</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg mb-8 max-w-lg opacity-85 leading-relaxed">
+                        Empower your enterprise to dominate disruptive industries with our cutting-edge Agentic AI solutions.
+                    </p>
+                    <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-yellow-600 opacity-10 blur-3xl animate-pulse"></div>
+                    <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-yellow-400 opacity-5 blur-3xl animate-pulse animation-delay-1000"></div>
+<div class="flex space-x-4">
+                        <button class="bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-700 hover:to-yellow-900 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                            Pioneer Your Industry
+                        </button>
+<button class="border-2 border-yellow-600 text-yellow-400 hover:bg-yellow-600 hover:bg-opacity-10 font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                            Schedule Demo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="relative parallax-layer" data-speed="0.05">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-64 h-64 sm:w-80 sm:h-80 hexagon bg-gradient-to-br from-yellow-700 to-yellow-900 opacity-20 blur-xl"></div>
+                    </div>
+                    <div class="relative flex items-center justify-center">
+                        <div class="w-64 h-64 sm:w-80 sm:h-80 hexagon bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center holographic-aura">
+                            <div class="w-3/4 h-3/4 hexagon bg-gray-900 flex items-center justify-center">
+                                <div class="relative">
+                                    <i data-feather="key" class="text-yellow-400 w-24 h-24"></i>
+                                    <div class="absolute -inset-4 flex items-center justify-center">
+                                        <div class="w-32 h-32 rounded-full border-2 border-yellow-600 border-opacity-30 circuit-node"></div>
+                                        <div class="w-40 h-40 rounded-full border-2 border-yellow-600 border-opacity-20 circuit-node animation-delay-1000"></div>
+                                        <div class="w-48 h-48 rounded-full border-2 border-yellow-600 border-opacity-10 circuit-node animation-delay-2000"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Circuit Pattern -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-yellow-500 opacity-20 circuit-node"></div>
+            <div class="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-yellow-400 opacity-30 circuit-node animation-delay-500"></div>
+            <div class="absolute bottom-1/4 left-2/3 w-5 h-5 rounded-full bg-yellow-300 opacity-10 circuit-node animation-delay-1500"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-2 h-2 rounded-full bg-yellow-500 opacity-25 circuit-node animation-delay-1000"></div>
+            
+            <!-- Connecting lines -->
+            <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <line x1="20%" y1="25%" x2="30%" y2="35%" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" />
+                <line x1="70%" y1="30%" x2="65%" y2="40%" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1" />
+                <line x1="40%" y1="60%" x2="50%" y2="70%" stroke="rgba(212, 175, 55, 0.1)" stroke-width="1" />
+                <line x1="75%" y1="65%" x2="60%" y2="75%" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1" />
+            </svg>
+        </div>
+        <!-- Technology Section -->
+        <section id="technology" class="py-20 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-yellow-400 glow">The Engine of Transformation</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-yellow-400">Autonomous Intelligence for Your Business</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Agentic AI acts as an autonomous brain for your enterprise - capable of setting goals, processing complex data, and making strategic decisions in real-time.
+                        </p>
+                        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 mb-8">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4 mt-1">
+                                    <i data-feather="target" class="text-yellow-200 w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-yellow-400 mb-2">Autonomous Goal Setting</h4>
+                                    <p class="text-gray-300">Agents receive high-level objectives and intelligently break them down into optimized task sequences.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 mb-8">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4 mt-1">
+                                    <i data-feather="cpu" class="text-yellow-200 w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-yellow-400 mb-2">Multi-Modal Reasoning</h4>
+                                    <p class="text-gray-300">Process and correlate data across text, images, and numbers to make context-aware decisions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4 mt-1">
+                                    <i data-feather="refresh-cw" class="text-yellow-200 w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-yellow-400 mb-2">Real-Time Adaptation</h4>
+                                    <p class="text-gray-300">Continuously learn from new data and feedback to optimize strategies on the fly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl border border-gray-700 flex items-center justify-center">
+                            <div class="relative w-64 h-64">
+                                <div class="absolute inset-0 rounded-full border-2 border-yellow-600 border-opacity-30 animate-spin-slow"></div>
+                                <div class="absolute inset-4 rounded-full border-2 border-yellow-500 border-opacity-20 animate-spin-slow animation-delay-1000"></div>
+                                <div class="absolute inset-8 rounded-full border-2 border-yellow-400 border-opacity-10 animate-spin-slow animation-delay-2000"></div>
+                                <div class="absolute inset-12 flex items-center justify-center">
+                                    <i data-feather="activity" class="text-yellow-400 w-16 h-16"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -z-10 -inset-4 bg-yellow-600 rounded-xl opacity-5 blur-xl"></div>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold mb-8 text-center text-yellow-400">Transformative Enterprise Impact</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 hover:border-yellow-500 transition-all duration-300">
+                        <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mx-auto">
+                            <i data-feather="zap" class="text-yellow-200"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center text-yellow-400">Proactive Operations</h4>
+                        <p class="text-gray-300 text-center">Agents anticipate needs and opportunities, acting before issues arise.</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 hover:border-yellow-500 transition-all duration-300">
+                        <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mx-auto">
+                            <i data-feather="clock" class="text-yellow-200"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center text-yellow-400">Unprecedented Efficiency</h4>
+                        <p class="text-gray-300 text-center">End-to-end automation of complex, multi-step business processes.</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 hover:border-yellow-500 transition-all duration-300">
+                        <div class="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mx-auto">
+                            <i data-feather="award" class="text-yellow-200"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center text-yellow-400">Strategic Advantage</h4>
+                        <p class="text-gray-300 text-center">Outpace competitors with real-time data processing and autonomous decision-making.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Circuit pattern background elements -->
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-yellow-600 opacity-5 blur-3xl"></div>
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-yellow-400 opacity-5 blur-3xl"></div>
+        </section>
+
+        <!-- Our Agentic AI Solutions -->
+<section class="py-20 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-yellow-400 glow">Our Agentic AI Solutions</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Trading Agentic AI -->
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-8 border border-gray-700 hover:border-yellow-500 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10">
+                        <div class="w-16 h-16 mb-6 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center">
+                            <i data-feather="trending-up" class="text-yellow-200 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400">Trading Agentic AI</h3>
+                        <p class="text-gray-300 mb-6">Autonomous financial agents that analyze markets, execute trades, and optimize portfolios with superhuman precision.</p>
+                        <div class="h-1 w-16 bg-gradient-to-r from-yellow-600 to-yellow-800 rounded-full"></div>
+                    </div>
+                    
+                    <!-- Conversational Agentic AI -->
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-8 border border-gray-700 hover:border-yellow-500 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10">
+                        <div class="w-16 h-16 mb-6 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center">
+                            <i data-feather="message-square" class="text-yellow-200 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400">Conversational Agentic AI</h3>
+                        <p class="text-gray-300 mb-6">Intelligent dialogue agents that understand context, emotions, and intent to deliver human-like interactions at scale.</p>
+                        <div class="h-1 w-16 bg-gradient-to-r from-yellow-600 to-yellow-800 rounded-full"></div>
+                    </div>
+                    
+                    <!-- Avatar Agentic AI -->
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-8 border border-gray-700 hover:border-yellow-500 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10">
+                        <div class="w-16 h-16 mb-6 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center">
+                            <i data-feather="user" class="text-yellow-200 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400">Avatar Agentic AI</h3>
+                        <p class="text-gray-300 mb-6">Digital human agents that represent your brand with lifelike appearance, expressions, and natural interactions.</p>
+                        <div class="h-1 w-16 bg-gradient-to-r from-yellow-600 to-yellow-800 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Circuit pattern background elements -->
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-yellow-600 opacity-5 blur-3xl"></div>
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-yellow-400 opacity-5 blur-3xl"></div>
+        </section>
+        <!-- Agentic AI in Action -->
+        <section id="applications" class="py-20 px-4 sm:px-8 lg:px-12 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+<div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-yellow-400 glow">Investment & Growth Potential</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4">
+                                    <i data-feather="bar-chart-2" class="text-yellow-200"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-yellow-400">Proven ROI & Competitive Edge</h3>
+                            </div>
+                            <p class="text-gray-300 pl-16">Our Agentic AI solutions deliver measurable returns through operational efficiency, innovation acceleration, and market leadership positioning.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4">
+                                    <i data-feather="dollar-sign" class="text-yellow-200"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-yellow-400">Investor Magnet</h3>
+                            </div>
+                            <p class="text-gray-300 pl-16">Demonstrating advanced AI capabilities positions your company as a technology leader, attracting venture capital, strategic partners, and public market investors.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4">
+                                    <i data-feather="rocket" class="text-yellow-200"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-yellow-400">Scalable Future Growth</h3>
+                            </div>
+                            <p class="text-gray-300 pl-16">Our solutions are architected for exponential scalability, making your company a compelling long-term investment with unlimited growth potential.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-8 border border-gray-700">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center mr-4">
+                                    <i data-feather="award" class="text-yellow-200 w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-yellow-400">Become a Market Disruptor</h3>
+                            </div>
+                            <p class="text-gray-300 mb-8">Agentic AI transforms your enterprise from follower to pioneer, ensuring long-term market dominance and resilience against industry disruptions.</p>
+                            <button class="w-full bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-700 hover:to-yellow-900 text-white font-semibold py-4 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                                Explore Investment Opportunities
+                            </button>
+                        </div>
+                        <div class="absolute -z-10 -inset-4 bg-yellow-600 rounded-xl opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+<footer class="py-8 px-4 sm:px-8 lg:px-12 text-gray-400 text-sm">
+            <div class="container mx-auto border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        © 2023 Quantum Circuit Nexus. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="hover:text-yellow-400 transition duration-300">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="hover:text-yellow-400 transition duration-300">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="hover:text-yellow-400 transition duration-300">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="#" class="hover:text-yellow-400 transition duration-300">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        feather.replace();
+        
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xd4af37,
+            backgroundColor: 0x111827,
+            points: 12.00,
+            maxDistance: 24.00,
+            spacing: 18.00
+        });
+        
+        // Parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const layers = document.querySelectorAll('.parallax-layer');
+            const x = (window.innerWidth - e.pageX * 0.1) / 100;
+            const y = (window.innerHeight - e.pageY * 0.1) / 100;
+            
+            layers.forEach(layer => {
+                const speed = parseFloat(layer.getAttribute('data-speed'));
+                layer.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+        
+        // Glow animation for heading
+        anime({
+            targets: '.glow',
+            opacity: [0.9, 1],
+            duration: 2000,
+            direction: 'alternate',
+            loop: true,
+            easing: 'easeInOutSine'
+        });
+    </script>
+</body>
+</html>
