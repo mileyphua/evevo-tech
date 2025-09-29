@@ -11,7 +11,7 @@ A modern, responsive website for EvolveX (Evevo Technologies Sdn Bhd) showcasing
 
 ### Interactive Components
 - **Industry Carousel**: Smooth transitions between McDonald's, JPMorgan Chase, Dubai Real Estate, and Healthcare Tourism examples
-- **SVO.ai Review Section**: Phone mockup with auto-advancing customer testimonials
+- **Review Section**: Phone mockup with auto-advancing customer testimonials
 - **Contact Form**: Complete validation with industry selection and AI knowledge assessment
 - **Responsive Navigation**: Mobile-friendly menu with smooth animations
 
