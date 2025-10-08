@@ -17,20 +17,22 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10.4.1
+      
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'pnpm'  # Changed from 'npm' to 'pnpm'
-        
-    - name: Install pnpm
-      run: npm install -g pnpm
+        cache: 'pnpm'
         
     - name: Install dependencies
-      run: pnpm install  # Changed from 'npm install' to 'pnpm install'
+      run: pnpm install
       
     - name: Build React app
-      run: pnpm run build  # Changed from 'npm run build' to 'pnpm run build'
+      run: pnpm run build
       
     - name: Setup Pages
       uses: actions/configure-pages@v3
