@@ -1,14 +1,11 @@
 name: Build and Deploy React App
-
 on:
   push:
     branches: [ main ]
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,17 +16,17 @@ jobs:
       
     - name: Install pnpm
       uses: pnpm/action-setup@v4
+      with:
+        version: 8
       
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'pnpm'
         
     - name: Install dependencies
       run: pnpm install
-      env:
-        PNPM_STORE_PATH: undefined
       
     - name: Build React app
       run: pnpm run build
