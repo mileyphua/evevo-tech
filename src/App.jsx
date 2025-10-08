@@ -605,7 +605,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router basename="/evevo-tech">
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/industries" element={<Industries />} />
