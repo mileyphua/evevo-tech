@@ -86,22 +86,20 @@ const Contact = () => {
     setIsSubmitting(true)
     
     try {
-      // Submit to Google Sheets via Google Forms
-      const googleFormUrl = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse'
+      // Submit to Google Sheets via Apps Script
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbwbhsJT6OqVGYiIxBfy3oKv5ipGzwLO4-OyPmQh_7fteOyDWtuSMqoKutW_5LYaG1-L/exec'  // Paste your Web App URL here
       
-      // Create form data for Google Sheets submission
-      const googleFormData = new FormData()
-      googleFormData.append('entry.COMPANY_NAME_ID', formData.companyName)
-      googleFormData.append('entry.BUSINESS_NAME_ID', formData.businessName)
-      googleFormData.append('entry.EMAIL_ID', formData.email)
-      googleFormData.append('entry.PHONE_ID', formData.phoneNumber)
-      googleFormData.append('entry.FOUND_US_ID', formData.foundUs)
-      googleFormData.append('entry.INDUSTRY_ID', formData.industry)
-      googleFormData.append('entry.AI_KNOWLEDGE_ID', formData.aiKnowledge)
-      googleFormData.append('entry.HELP_NEEDED_ID', formData.helpNeeded)
-      googleFormData.append('entry.ADDITIONAL_INFO_ID', formData.additionalInfo)
-      googleFormData.append('entry.MARKETING_CONSENT_ID', formData.marketingConsent ? 'Yes' : 'No')
+      const response = await fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
       
+      console.log('Form submitted:', formData)
+          
       // Submit to Google Sheets (no-cors mode to avoid CORS issues)
       await fetch(googleFormUrl, {
         method: 'POST',
