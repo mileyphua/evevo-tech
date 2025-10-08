@@ -21,13 +21,16 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+        cache: 'pnpm'  # Changed from 'npm' to 'pnpm'
+        
+    - name: Install pnpm
+      run: npm install -g pnpm
         
     - name: Install dependencies
-      run: npm install
+      run: pnpm install  # Changed from 'npm install' to 'pnpm install'
       
     - name: Build React app
-      run: npm run build
+      run: pnpm run build  # Changed from 'npm run build' to 'pnpm run build'
       
     - name: Setup Pages
       uses: actions/configure-pages@v3
