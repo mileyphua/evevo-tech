@@ -127,7 +127,7 @@ const Industries = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <img src={logoImage} alt="EvolveX Logo" className="w-12 h-12 object-contain"/>
+              <img src={logoImage} alt="EvolveX Logo" className="w-16 h-16 object-contain"/>
               <div>
                 <span className="text-yellow-400 font-bold text-xl">EvolveX</span>
                 <p className="text-xs text-gray-400">Evevo Technologies Sdn Bhd</p>
