@@ -21,7 +21,8 @@ const Contact = () => {
     industry: '',
     aiKnowledge: '',
     helpNeeded: '',
-    additionalInfo: ''
+    additionalInfo: '',
+    marketingConsent: false
   })
   
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -84,14 +85,51 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData)
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    try {
+      // Submit to Google Sheets via Google Forms
+      const googleFormUrl = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse'
+      
+      // Create form data for Google Sheets submission
+      const googleFormData = new FormData()
+      googleFormData.append('entry.COMPANY_NAME_ID', formData.companyName)
+      googleFormData.append('entry.BUSINESS_NAME_ID', formData.businessName)
+      googleFormData.append('entry.EMAIL_ID', formData.email)
+      googleFormData.append('entry.PHONE_ID', formData.phoneNumber)
+      googleFormData.append('entry.FOUND_US_ID', formData.foundUs)
+      googleFormData.append('entry.INDUSTRY_ID', formData.industry)
+      googleFormData.append('entry.AI_KNOWLEDGE_ID', formData.aiKnowledge)
+      googleFormData.append('entry.HELP_NEEDED_ID', formData.helpNeeded)
+      googleFormData.append('entry.ADDITIONAL_INFO_ID', formData.additionalInfo)
+      googleFormData.append('entry.MARKETING_CONSENT_ID', formData.marketingConsent ? 'Yes' : 'No')
+      
+      // Submit to Google Sheets (no-cors mode to avoid CORS issues)
+      await fetch(googleFormUrl, {
+        method: 'POST',
+        body: googleFormData,
+        mode: 'no-cors'
+      })
+      
+      console.log('Form submitted:', formData)
+      
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      
+      // Redirect to Calendly after 2 seconds
+      setTimeout(() => {
+        window.open('https://calendly.com/evevo-tech-support/30min', '_blank')
+      }, 2000)
+      
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setIsSubmitting(false)
+      // Still show success to user even if Google Sheets fails
+      setIsSubmitted(true)
+      
+      // Still redirect to Calendly
+      setTimeout(() => {
+        window.open('https://calendly.com/evevo-tech-support/30min', '_blank')
+      }, 2000)
+    }
   }
 
   const resetForm = () => {
@@ -104,7 +142,8 @@ const Contact = () => {
       industry: '',
       aiKnowledge: '',
       helpNeeded: '',
-      additionalInfo: ''
+      additionalInfo: '',
+      marketingConsent: false
     })
     setIsSubmitted(false)
   }
@@ -348,6 +387,24 @@ const Contact = () => {
                           />
                         </div>
 
+                        {/* Marketing Consent */}
+                        <div className="flex items-start space-x-3 bg-gray-700/30 p-4 rounded-lg">
+                          <Checkbox
+                            id="marketingConsent"
+                            checked={formData.marketingConsent}
+                            onCheckedChange={(checked) => handleInputChange('marketingConsent', checked)}
+                            className="mt-1 border-yellow-600 data-[state=checked]:bg-yellow-600"
+                          />
+                          <div className="flex-1">
+                            <Label
+                              htmlFor="marketingConsent"
+                              className="text-sm text-gray-300 cursor-pointer leading-relaxed"
+                            >
+                              I consent to receive marketing communications, product updates, industry insights, and promotional materials from Evevo Technologies Sdn Bhd. I understand that I can unsubscribe at any time by contacting support@evevo-tech.com or using the unsubscribe link in emails.
+                            </Label>
+                          </div>
+                        </div>
+
                         {/* Submit Button */}
                         <div className="text-center">
                           <Button
@@ -395,15 +452,28 @@ const Contact = () => {
                       
                       <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                         We've received your information and our AI experts will review your requirements. 
-                        You'll hear from us within 24 hours to discuss how EvolveX can drive your business transformation.
+                        A Calendly scheduling window will open shortly to book your consultation call.
                       </p>
+                      
+                      <div className="bg-yellow-600/20 border border-yellow-600/30 rounded-lg p-6 mb-6">
+                        <h3 className="text-xl font-semibold text-yellow-400 mb-3">📅 Schedule Your Consultation</h3>
+                        <p className="text-gray-300 mb-4">
+                          Book a 30-minute consultation with our AI experts to discuss your business needs and explore tailored solutions.
+                        </p>
+                        <Button
+                          onClick={() => window.open('https://calendly.com/evevo-tech-support/30min', '_blank')}
+                          className="bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-700 hover:to-yellow-900 text-white w-full sm:w-auto"
+                        >
+                          Book Appointment Now
+                        </Button>
+                      </div>
                       
                       <div className="bg-gray-700/30 rounded-lg p-6 mb-8">
                         <h3 className="text-xl font-semibold text-yellow-400 mb-4">What happens next?</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                           <div className="flex items-center space-x-3">
                             <div className="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold">1</div>
-                            <span>Expert consultation call</span>
+                            <span>Schedule consultation call</span>
                           </div>
                           <div className="flex items-center space-x-3">
                             <div className="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold">2</div>
