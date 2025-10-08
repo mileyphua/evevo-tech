@@ -27,7 +27,9 @@ jobs:
         cache: 'pnpm'
         
     - name: Install dependencies
-      run: pnpm install --no-store
+      run: pnpm install
+      env:
+        PNPM_STORE_PATH: undefined
       
     - name: Build React app
       run: pnpm run build
