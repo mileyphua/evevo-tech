@@ -174,8 +174,8 @@ const Industries = () => {
         <section className="py-20 px-4 sm:px-8 lg:px-12">
           <div className="container mx-auto">
             <div className="relative max-w-6xl mx-auto">
-              {/* Navigation Buttons */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+              {/* Navigation Buttons - Desktop */}
+              <div className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
                 <Button
                   onClick={prevIndustry}
                   className="w-12 h-12 rounded-full bg-gray-800/80 hover:bg-gray-700 border border-yellow-600/30 backdrop-blur-sm"
@@ -184,7 +184,7 @@ const Industries = () => {
                 </Button>
               </div>
               
-              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
+              <div className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
                 <Button
                   onClick={nextIndustry}
                   className="w-12 h-12 rounded-full bg-gray-800/80 hover:bg-gray-700 border border-yellow-600/30 backdrop-blur-sm"
@@ -213,12 +213,12 @@ const Industries = () => {
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-white animate-pulse" style={{animationDelay: '2s'}}></div>
                           </div>
 
-                          <div className="relative z-10 p-12">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                          <div className="relative z-10 p-4 sm:p-8 md:p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                               {/* Content */}
                               <div className="text-white">
-                                <div className="flex items-center mb-6">
-                                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mr-4">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
+                                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 sm:mb-0 sm:mr-4 flex-shrink-0">
                                     <img 
                                       src={industries[currentIndustry].logo} 
                                       alt={`${industries[currentIndustry].company} Logo`}
@@ -226,8 +226,8 @@ const Industries = () => {
                                     />
                                   </div>
                                   <div>
-                                    <h2 className="text-3xl font-bold">{industries[currentIndustry].title}</h2>
-                                    <p className="text-white/80">{industries[currentIndustry].description}</p>
+                                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold break-words">{industries[currentIndustry].title}</h2>
+                                    <p className="text-white/80 text-sm sm:text-base">{industries[currentIndustry].description}</p>
                                   </div>
                                 </div>
 
@@ -246,37 +246,37 @@ const Industries = () => {
                                   {industries[currentIndustry].details}
                                 </p>
 
-                                <div className="grid grid-cols-2 gap-4 mb-6">
-                                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                                    <TrendingUp className="w-6 h-6 mb-2" />
-                                    <p className="text-sm font-semibold">ROI Impact</p>
-                                    <p className="text-lg font-bold">{industries[currentIndustry].roi}</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
+                                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 mb-2" />
+                                    <p className="text-xs sm:text-sm font-semibold">ROI Impact</p>
+                                    <p className="text-base sm:text-lg font-bold break-words">{industries[currentIndustry].roi}</p>
                                   </div>
-                                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                                    <Zap className="w-6 h-6 mb-2" />
-                                    <p className="text-sm font-semibold">Timeline</p>
-                                    <p className="text-lg font-bold">{industries[currentIndustry].timeline}</p>
+                                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 mb-2" />
+                                    <p className="text-xs sm:text-sm font-semibold">Timeline</p>
+                                    <p className="text-base sm:text-lg font-bold break-words">{industries[currentIndustry].timeline}</p>
                                   </div>
                                 </div>
                               </div>
 
                               {/* Details Panel */}
-                              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                                <h3 className="text-xl font-bold text-white mb-6">Key Technologies</h3>
-                                <div className="grid grid-cols-2 gap-3 mb-8">
+                              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8">
+                                <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Key Technologies</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-6 sm:mb-8">
                                   {industries[currentIndustry].technologies.map((tech, index) => (
-                                    <Badge key={index} className="bg-white/20 text-white border-white/30 justify-center py-2">
+                                    <Badge key={index} className="bg-white/20 text-white border-white/30 justify-center py-2 text-xs sm:text-sm">
                                       {tech}
                                     </Badge>
                                   ))}
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-4">Key Achievements</h3>
-                                <ul className="space-y-3">
+                                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Key Achievements</h3>
+                                <ul className="space-y-2 sm:space-y-3">
                                   {industries[currentIndustry].achievements.map((achievement, index) => (
-                                    <li key={index} className="flex items-start text-white/90">
-                                      <Shield className="w-5 h-5 mr-3 mt-0.5 text-white" />
-                                      {achievement}
+                                    <li key={index} className="flex items-start text-white/90 text-sm sm:text-base">
+                                      <Shield className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 mt-0.5 text-white flex-shrink-0" />
+                                      <span>{achievement}</span>
                                     </li>
                                   ))}
                                 </ul>
@@ -303,6 +303,22 @@ const Industries = () => {
                     }`}
                   />
                 ))}
+              </div>
+
+              {/* Mobile Navigation Buttons */}
+              <div className="flex md:hidden justify-center space-x-4 mt-6">
+                <Button
+                  onClick={prevIndustry}
+                  className="w-12 h-12 rounded-full bg-gray-800/80 hover:bg-gray-700 border border-yellow-600/30 backdrop-blur-sm"
+                >
+                  <ChevronLeft className="w-6 h-6 text-yellow-400" />
+                </Button>
+                <Button
+                  onClick={nextIndustry}
+                  className="w-12 h-12 rounded-full bg-gray-800/80 hover:bg-gray-700 border border-yellow-600/30 backdrop-blur-sm"
+                >
+                  <ChevronRight className="w-6 h-6 text-yellow-400" />
+                </Button>
               </div>
 
               {/* Industry Navigation */}
